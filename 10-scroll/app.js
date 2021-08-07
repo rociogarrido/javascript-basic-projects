@@ -1,6 +1,3 @@
-// slice extracts a section of a string without modifying original string
-//offsetTop - A Number, representing the top position of the element, in pixels
-
 // ********** set date ************
 // select span
 const date = document.getElementById("date");
@@ -47,3 +44,35 @@ window.addEventListener("scroll", function () {
 
 // ********** smooth scroll ************
 // select links
+const scrollLinks = document.querySelectorAll(".scroll-link");
+
+scrollLinks.forEach(function (link) {
+  link.addEventListener("click", function (e) {
+    // prevent default
+    e.preventDefault();
+    // navigate to specific spot
+    // slice extracts a section of a string without modifying original string
+    const id = e.currentTarget.getAttribute("href").slice(1);
+    // console.log(id);
+    const element = document.getElementById(id);
+    // calculate the heights
+    const navHeight = navbar.getBoundingClientRect().height;
+    const containerHeight = linksContainer.getBoundingClientRect().height;
+    const fixedNav = navbar.classList.contains("fixed-nav");
+    // offsetTop - A Number, representing the top position of the element, in pixels
+    let position = element.offsetTop - navHeight;
+    // console.log(position);
+    if (!fixedNav) {
+      position = position - navHeight;
+    }
+    if (navHeight > 82) {
+      position = position + containerHeight;
+    }
+    // scroll to the element
+    window.scrollTo({
+      left: 0,
+      top: position,
+    });
+    linksContainer.style.height = 0;
+  });
+});
