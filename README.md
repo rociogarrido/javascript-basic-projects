@@ -17,17 +17,20 @@ Collection of different basic Vanilla JavaScript projects coded with basic JavaS
 
 ## 👨‍💻 Projects:
 
-| Projects                | Demo                                                                     |
-| ----------------------- | ------------------------------------------------------------------------ |
-| Color Flipper           | <a href=>Demo</a>                                                        |
-| Counter                 | <a href=>Demo</a>                                                        |
-| Reviews                 | <a href=>Demo</a>                                                        |
-| Navbar                  | <a href=>Demo</a>                                                        |
-| Sidebar                 | <a href=>Demo</a>                                                        |
-| Modal                   | <a href=>Demo</a>                                                        |
-| Questions               | <a href=>Demo</a>                                                        |
-| Menu                    | <a href=>Demo</a>                                                        |
-| Video                   | <a href=>Demo</a>                                                        |
+| Projects                | Demo                                                                                |
+| ----------------------- | ----------------------------------------------------------------------------------- |
+| Color Flipper           | <a href="https://vannilla-js-basic-project-1-background-color.netlify.app/">Demo</a>|
+| Counter                 | <a href="https://vanilla-js-basic-project-2-simple-counter.netlify.app/">Demo</a>   |
+| Reviews                 | <a href="https://vanilla-js-basic-project-3-reviews.netlify.app/">Demo</a>          |
+| Navbar                  | <a href="https://vanilla-js-basic-project-4-navbar.netlify.app/">Demo</a>           |
+| Sidebar                 | <a href="https://vanilla-js-basic-project-5-sidebar.netlify.app/">Demo</a>          |
+| Modal                   | <a href="https://vanilla-js-basic-project-6-modal.netlify.app/">Demo</a>            |
+| Questions               | <a href="https://vanilla-js-basic-project-7-questions.netlify.app/">Demo</a>        |
+| Menu                    | <a href="https://vanilla-js-basic-project-8-menu.netlify.app/">Demo</a>             |
+| Video                   | <a href="https://vannilla-js-basic-project-9-video-preloader.netlify.app/">Demo</a> |
+| Scroll                  | <a href="https://vannilla-js-basic-project-10-scroll.netlify.app/">Demo</a>         |
+| Tabs                    | <a href="https://vannilla-js-basic-project-11-tabs.netlify.app/">Demo</a>           |
+
 
 ### If you find this repo helpful, don't forget to give a star.⭐
 
