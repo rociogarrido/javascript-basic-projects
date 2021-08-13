@@ -13,23 +13,22 @@ Collection of different basic Vanilla JavaScript projects coded with basic JavaS
 - Vanilla JavaScript
 - HTML5
 - CSS3
-- Netlify
 - Git/GitHub
 
 ## 👨‍💻 Projects:
 
 | Projects                | Demo                                                                     |
 | ----------------------- | ------------------------------------------------------------------------ |
-| Background Color Picker | <a href="https://jsprojects.netlify.app/backgroundcolorpicker/">Demo</a> |
-| Counter                 | <a href="https://jsprojects.netlify.app/simplecounter/">Demo</a>         |
-| Review                  | <a href="https://jsprojects.netlify.app/review/">Demo</a>                |
-| Menu List               | <a href="https://jsprojects.netlify.app/menu/">Demo</a>                  |
-| Weather App             | <a href="https://jsprojects.netlify.app/weather-app/">Demo</a>           |
-| Calendar                | <a href="https://jsprojects.netlify.app/calendar/">Demo</a>              |
-| Quize App               | <a href="https://jsprojects.netlify.app/quize/">Demo</a>                 |
-| Movie App               | <a href="https://jsprojects.netlify.app/movie-app//">Demo</a>            |
-| Tetris Game             | <a href="https://jsprojects.netlify.app/tetrisgame/">Demo</a>            |
+| Color Flipper           | <a href=>Demo</a>                                                        |
+| Counter                 | <a href=>Demo</a>                                                        |
+| Reviews                 | <a href=>Demo</a>                                                        |
+| Navbar                  | <a href=>Demo</a>                                                        |
+| Sidebar                 | <a href=>Demo</a>                                                        |
+| Modal                   | <a href=>Demo</a>                                                        |
+| Questions               | <a href=>Demo</a>                                                        |
+| Menu                    | <a href=>Demo</a>                                                        |
+| Video                   | <a href=>Demo</a>                                                        |
 
-### If you find this repo helpful don't forget to give a star.⭐
+### If you find this repo helpful, don't forget to give a star.⭐
 
 # #happyCoding 🚀
