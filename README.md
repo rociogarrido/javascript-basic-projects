@@ -15,7 +15,7 @@ Collection of different basic Vanilla JavaScript projects coded with basic JavaS
 - CSS3
 - Git/GitHub
 
-## 👨‍💻 Projects:
+## 👩🏼‍💻 Projects:
 
 | Projects                | Demo                                                                                |
 | ----------------------- | ----------------------------------------------------------------------------------- |
