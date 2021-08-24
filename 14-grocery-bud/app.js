@@ -48,6 +48,10 @@ function addItem(e) {
       </button>
     </div>
   `;
+    const deleteBtn = element.querySelector(".delete-btn");
+    const editBtn = element.querySelector(".edit-btn");
+    deleteBtn.addEventListener("click", deleteItem);
+    editBtn.addEventListener("click", editItem);
     // append to list
     list.appendChild(element);
     // display alert
@@ -59,7 +63,7 @@ function addItem(e) {
     // set back to default
     setBackToDefault();
   } else if (value && editFlag) {
-    console.log("editing");
+    // console.log("editing");
   } else {
     displayAlert("Please, enter a grocery item", "danger");
   }
@@ -84,6 +88,11 @@ function clearItems() {
       list.removeChild(item);
     });
   }
+  container.classList.remove("show-container");
+  displayAlert("empty list", "danger");
+
+  setBackToDefault();
+  // localStorage.removeItem("list");
 }
 
 // set back to default
@@ -96,7 +105,7 @@ function setBackToDefault() {
 
 // ****** LOCAL STORAGE **********
 function addToLocalStorage(id, value) {
-  console.log("added to local storage");
+  // console.log("added to local storage");
   const item = {
     id,
     value,
