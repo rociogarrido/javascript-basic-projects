@@ -16,6 +16,8 @@ let editID = "";
 // ****** EVENT LISTENERS **********
 // submit form
 form.addEventListener("submit", addItem);
+// clear items
+clearBtn.addEventListener("click", clearItems);
 
 // ****** FUNCTIONS **********
 function addItem(e) {
@@ -26,7 +28,36 @@ function addItem(e) {
   const id = new Date().getTime().toString();
   // console.log(id);
   if (value && !editFlag) {
-    console.log("add item to the list");
+    const element = document.createElement("article");
+    // add class
+    element.classList.add("grocery-item");
+    // add id
+    const attr = document.createAttribute("data-id");
+    attr.value = id;
+    element.setAttributeNode(attr);
+    // add text
+    element.innerHTML = `<p class="title">${value}</p>
+    <div class="btn-container">
+      <!-- edit btn -->
+      <button type="button" class="edit-btn">
+        <i class="fas fa-edit"></i>
+      </button>
+      <!-- delete btn -->
+      <button type="button" class="delete-btn">
+        <i class="fas fa-trash"></i>
+      </button>
+    </div>
+  `;
+    // append to list
+    list.appendChild(element);
+    // display alert
+    displayAlert("added successfully", "success");
+    // show container
+    container.classList.add("show-container");
+    // add to local storage
+    addToLocalStorage(id, value);
+    // set back to default
+    setBackToDefault();
   } else if (value && editFlag) {
     console.log("editing");
   } else {
@@ -38,12 +69,38 @@ function addItem(e) {
 function displayAlert(text, action) {
   alert.textContent = text;
   alert.classList.add(`alert-${action}`);
-  // remove alert after 1 second
+  // remove alert after 2 seconds
   setTimeout(function () {
     alert.textContent = "";
     alert.classList.remove(`alert-${action}`);
-  }, 1000);
+  }, 2000);
 }
-// ****** LOCAL STORAGE **********
 
+// clear items
+function clearItems() {
+  const items = document.querySelectorAll(".grocery-item");
+  if (items.length > 0) {
+    items.forEach(function (item) {
+      list.removeChild(item);
+    });
+  }
+}
+
+// set back to default
+function setBackToDefault() {
+  grocery.value = "";
+  editFlag = false;
+  editID = "";
+  submitBtn.textContent = "submit";
+}
+
+// ****** LOCAL STORAGE **********
+function addToLocalStorage(id, value) {
+  console.log("added to local storage");
+  const item = {
+    id,
+    value,
+  };
+  localStorage.setItem(id, JSON.stringify(item));
+}
 // ****** SETUP ITEM **********
