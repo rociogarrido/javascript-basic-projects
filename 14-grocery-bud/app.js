@@ -138,17 +138,33 @@ function setBackToDefault() {
 }
 
 // ****** LOCAL STORAGE **********
+// add to local storage
 function addToLocalStorage(id, value) {
-  // console.log("added to local storage");
-  const item = {
-    id,
-    value,
-  };
-  localStorage.setItem(id, JSON.stringify(item));
+  const grocery = { id, value };
+  // console.log(grocery);
+  let items = getLocalStorage();
+  console.log(items);
+  items.push(grocery);
+  localStorage.setItem("list", JSON.stringify(items));
+}
+
+// get from local storage
+function getLocalStorage() {
+  return localStorage.getItem("list")
+    ? JSON.parse(localStorage.getItem("list"))
+    : [];
 }
 
 function removeFromLocalStorage(id) {}
 
 function editLocalStorage(id, value) {}
+
+// localStorage API
+
+// setItem
+
+// removeItem
+
+// save as strings
 
 // ****** SETUP ITEM **********
