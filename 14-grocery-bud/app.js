@@ -18,8 +18,11 @@ let editID = "";
 form.addEventListener("submit", addItem);
 // clear items
 clearBtn.addEventListener("click", clearItems);
+// load items
+window.addEventListener("DOMContentLoaded", setupItems);
 
 // ****** FUNCTIONS **********
+// add item
 function addItem(e) {
   e.preventDefault();
   // console.log(grocery.value);
@@ -48,9 +51,10 @@ function addItem(e) {
       </button>
     </div>
   `;
+    // add event listeners to both buttons
     const deleteBtn = element.querySelector(".delete-btn");
-    const editBtn = element.querySelector(".edit-btn");
     deleteBtn.addEventListener("click", deleteItem);
+    const editBtn = element.querySelector(".edit-btn");
     editBtn.addEventListener("click", editItem);
     // append to list
     list.appendChild(element);
@@ -62,7 +66,7 @@ function addItem(e) {
     addToLocalStorage(id, value);
     // set back to default
     setBackToDefault();
-  } else if (value && editFlag) {
+  } else if (value !== "" && editFlag) {
     // update element
     editElement.innerHTML = value;
     displayAlert("updated successfully", "success");
@@ -110,10 +114,10 @@ function deleteItem(e) {
   displayAlert("item removed", "danger");
   setBackToDefault();
   // remove from local storage
-  // removeFromLocalStorage(id);
+  removeFromLocalStorage(id);
 }
 
-// edit function
+// edit item function
 function editItem() {
   const element = e.currentTarget.parentElement.parentElement;
   // set edit item
@@ -123,7 +127,7 @@ function editItem() {
   // set edit flag
   editFlag = true;
   // set edit id
-  editID = editElement.dataset.id;
+  editID = element.dataset.id;
   // set submit button text
   submitBtn.textContent = "edit";
 }
@@ -137,7 +141,7 @@ function setBackToDefault() {
 }
 
 // ****** LOCAL STORAGE **********
-// add to local storage
+// add item to local storage
 function addToLocalStorage(id, value) {
   const grocery = { id, value };
   // console.log(grocery);
@@ -147,14 +151,14 @@ function addToLocalStorage(id, value) {
   localStorage.setItem("list", JSON.stringify(items));
 }
 
-// get from local storage
+// get array from local storage
 function getLocalStorage() {
   return localStorage.getItem("list")
     ? JSON.parse(localStorage.getItem("list"))
     : [];
 }
 
-// removeItem from local storage
+// remove item from local storage
 function removeFromLocalStorage(id) {
   let items = getLocalStorage();
   items = items.filter(function (item) {
@@ -166,6 +170,7 @@ function removeFromLocalStorage(id) {
   localStorage.setItem("list", JSON.stringify(items));
 }
 
+// save as strings
 function editLocalStorage(id, value) {
   let items = getLocalStorage();
   items = items.map(function (item) {
@@ -177,10 +182,41 @@ function editLocalStorage(id, value) {
   localStorage.setItem("list", JSON.stringify(items));
 }
 
-// localStorage API
-
-// setItem
-
-// save as strings
-
 // ****** SETUP ITEM **********
+function setupItems() {
+  let items = getLocalStorage();
+  if (items.length > 0) {
+    items.forEach(function (item) {
+      createListElement(item.id, item.value);
+    });
+    container.classList.add("show-container");
+  }
+}
+
+function createListElement(id, value) {
+  const element = document.createElement("article");
+
+  let attr = document.createAttribute("data-id");
+  attr.value = id;
+  element.setAttributeNode(attr);
+  element.classList.add("grocery-item");
+  element.innerHTML = `<p class="title">${value}</p>
+      <div class="btn-container">
+        <!-- edit btn -->
+        <button type="button" class="edit-btn">
+          <i class="fas fa-edit"></i>
+        </button>
+        <!-- delete btn -->
+        <button type="button" class="delete-btn">
+          <i class="fas fa-trash"></i>
+        </button>
+      </div>
+    `;
+  // add event listeners to both buttons
+  const deleteBtn = element.querySelector(".delete-btn");
+  deleteBtn.addEventListener("click", deleteItem);
+  const editBtn = element.querySelector(".edit-btn");
+  editBtn.addEventListener("click", editItem);
+  // append to list
+  list.appendChild(element);
+}
