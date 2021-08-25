@@ -30,6 +30,11 @@ Collection of different basic Vanilla JavaScript projects coded with basic JavaS
 | Video                   | <a href="https://vannilla-js-basic-project-9-video-preloader.netlify.app/">Demo</a> |
 | Scroll                  | <a href="https://vannilla-js-basic-project-10-scroll.netlify.app/">Demo</a>         |
 | Tabs                    | <a href="https://vannilla-js-basic-project-11-tabs.netlify.app/">Demo</a>           |
+| Countdown Timer         | <a href="https://vannilla-js-basic-project-12-countdown.netlify.app/">Demo</a>      |
+| Lorem Ipsum             | <a href="https://vannilla-js-basic-project-13-lorem-ipsum.netlify.app/">Demo</a>    |
+| Grocery Bud             | <a href="https://vannilla-js-basic-project-14-grocery-bud.netlify.app/">Demo</a>    |
+| Slider                  | <a href="https://vannilla-js-basic-project-15-slider.netlify.app/">Demo</a>         |
+
 
 
 ### If you find this repo helpful, don't forget to give a star.⭐
