@@ -63,7 +63,12 @@ function addItem(e) {
     // set back to default
     setBackToDefault();
   } else if (value && editFlag) {
-    // console.log("editing");
+    // update element
+    editElement.innerHTML = value;
+    displayAlert("updated successfully", "success");
+    // edit local storage
+    editLocalStorage(editID, value);
+    setBackToDefault();
   } else {
     displayAlert("Please, enter a grocery item", "danger");
   }
@@ -95,6 +100,35 @@ function clearItems() {
   // localStorage.removeItem("list");
 }
 
+// delete function
+function deleteItem(e) {
+  const element = e.currentTarget.parentElement.parentElement;
+  const id = element.dataset.id;
+  list.removeChild(element);
+  if (list.children.length === 0) {
+    container.classList.remove("show-container");
+  }
+  displayAlert("item removed", "danger");
+  setBackToDefault();
+  // remove from local storage
+  // removeFromLocalStorage(id);
+}
+
+// edit function
+function editItem() {
+  const element = e.currentTarget.parentElement.parentElement;
+  // set edit item
+  editElement = e.currentTarget.parentElement.previousElementSibling;
+  // set form value
+  grocery.value = editElement.innerHTML;
+  // set edit flag
+  editFlag = true;
+  // set edit id
+  editID = editElement.dataset.id;
+  // set submit button text
+  submitBtn.textContent = "edit";
+}
+
 // set back to default
 function setBackToDefault() {
   grocery.value = "";
@@ -112,4 +146,9 @@ function addToLocalStorage(id, value) {
   };
   localStorage.setItem(id, JSON.stringify(item));
 }
+
+function removeFromLocalStorage(id) {}
+
+function editLocalStorage(id, value) {}
+
 // ****** SETUP ITEM **********
